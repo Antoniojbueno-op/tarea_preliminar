@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Eliminar
+{%endblock title %}
+{% load static %}
+  
+{% block content %}
+{%include 'base/tor_bar.html' %}
+<header>
+
+
+
+
+    <form method="post">{% csrf_token %} 
+
+        <div class="center">
+            <center>
+                <button class="submit success button" class="button expanded" type="submit">¿Seguro?</button>
+            </center>
+        </div>
+    </form> 
+
+</header>
+
+
+
+{% endblock content %}

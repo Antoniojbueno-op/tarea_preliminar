@@ -1,0 +1,39 @@
+<header>
+    <table class="hover">
+        <thead>
+          <tr>
+            <th width="200">Marca</th>
+            <th width="200">Modelo</th>
+            <th width="200">Fecha</th>
+            <th width="200">Telefono</th>
+            <th width="200">Matricula</th>
+            <th width="200">id</th>
+            <th width="200">Modificar</th>
+            
+            
+          </tr>
+        </thead>
+{% for e in  object_list %}
+
+    <tbody>
+      <tr>
+        <td>{{e.marca.marca}}<a class="alert button" href="{%url 'marca:eliminar' e.marca.id %}">Eliminar</a></td>
+        <td>{{e.modelo.modelo}}<a class="alert button" href="{%url 'modelo:eliminar' e.modelo.id %}">Eliminar</a></td>
+        <td>{{e.fecha}}</td>
+        <td>{{e.Telefono}}</td>
+        <td>{{e.matricula}}</td>
+        <td>{{e.id}}</td>
+        <td><a class="warning button" href="{%url 'url:update' e.id %}">Editar</a></td>
+        <td><a class="alert button" href="{%url 'url:delete' e.id %}">Eliminar</a></td>
+        
+     
+
+
+
+{% endfor %}
+</tr>
+
+</tbody>
+</table>
+<center><a class="button secondary" href="../crear/">Crear</a></center>
+</header>

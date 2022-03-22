@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Crear
+{%endblock title %}
+{% load static %}
+  
+{% block content %}
+{%include 'base/tor_bar.html' %}
+<header>
+    <table class="hover">
+        <thead>
+          <tr>
+            <th width="200">Modelo</th>
+
+            <th width="200">Guardar</th>
+           
+            
+            
+            
+          </tr>
+        </thead>
+
+
+
+<tbody>
+    <tr>
+    <form method="post">{% csrf_token %}   
+      <td>{{form.modelo}}</td>
+      
+      
+
+    <td><button class="submit success button" type="submit">Add</button></td>
+</form> 
+</tr>
+</tbody>
+</table>
+</header>
+
+
+
+{% endblock content %}

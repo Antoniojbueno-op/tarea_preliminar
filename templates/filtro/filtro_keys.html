@@ -1,0 +1,114 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Filtro
+{%endblock title %}
+{% load static %}
+  
+{% block content %}
+{%include 'base/tor_bar.html' %}
+<header>
+    <div class="grid-container">
+        <div class="cell">
+        
+        <h1>Filtrar</h1>
+        <form class="cell grid-x grid-margin-x" method="get" >{% csrf_token %}
+            
+            <div class="cell large-7">
+                <input type="text" id="kword" name="kword" placeholder="Filtrar por keys" >
+            </div>
+            <div class="cell large-2">
+                <button type="submit" class="submit success button">Save</button>
+            </div>
+            
+        
+        </form>
+        </div>
+            <table class="hover">
+                <thead>
+                    <tr>
+                        <th width="200">Key</th>
+                        <th width="200">Values</th>
+                        
+            
+                    </tr>
+                </thead>
+
+
+    <tbody>
+        {% for key,values in dic.items %}
+      <tr>
+          
+          
+          <td>{{key}}</td>
+          <td>{{values}}</td>
+          
+              
+        
+        
+        </div></div>
+     
+
+
+
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<center><a class="button secondary" href="../crear/">Crear</a></center>
+</header>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+    <table class="hover">
+        <thead>
+          <tr>
+            <th width="200">Marca</th>
+            <th width="200">Modelo</th>
+            <th width="200">Fecha</th>
+            <th width="200">Telefono</th>
+            <th width="200">Matricula</th>
+            <th width="200">id</th>
+            <th width="200">Modificar</th>
+            
+            
+          </tr>
+        </thead>
+{% for e in  object_list %}
+
+    <tbody>
+      <tr>
+        <td>{{e.marca.marca}}<a class="alert button" href="{%url 'marca:eliminar' e.marca.id %}">Eliminar</a></td>
+        <td>{{e.modelo.modelo}}<a class="alert button" href="{%url 'modelo:eliminar' e.modelo.id %}">Eliminar</a></td>
+        <td>{{e.fecha}}</td>
+        <td>{{e.Telefono}}</td>
+        <td>{{e.matricula}}</td>
+        <td>{{e.id}}</td>
+        <td><a class="warning button" href="{%url 'url:update' e.id %}">Editar</a></td>
+        <td><a class="alert button" href="{%url 'url:delete' e.id %}">Eliminar</a></td>
+        
+     
+
+
+
+{% endfor %}
+</tr>
+
+</tbody>
+</table>
+<center><a class="button secondary" href="../crear/">Crear</a></center>
+</header>

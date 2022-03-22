@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %}
+{% block title %}
+Lista
+{%endblock title %}
+{% load static %}
+  
+{% block content %}
+{%include 'base/tor_bar.html' %}
+<header>
+    <table class="hover">
+        <thead>
+          <tr>
+            <th width="200">Marca</th>
+            <th width="200">Modelo</th>
+            <th width="200">Fecha</th>
+            <th width="200">Telefono</th>
+            <th width="200">Matricula</th>
+            <th width="200">Guardar</th>
+           
+            
+            
+            
+          </tr>
+        </thead>
+
+
+
+<tbody>
+    <tr>
+    <form method="post">{% csrf_token %}   
+      <td>{{form.marca}}</td>
+      <td>{{form.modelo}}</td>
+      <td><input type="date" id="id_fecha" name="fecha"
+        value="2018-07-22"
+        min="2018-01-01" max="2018-12-31"></td>
+      <td>{{form.Telefono}}</td>
+      <td>{{form.matricula}}</td>
+
+    <td><button class="submit success button" type="submit">Save</button></td>
+</form> 
+</tr>
+</tbody>
+</table>
+</header>
+
+
+
+{% endblock content %}

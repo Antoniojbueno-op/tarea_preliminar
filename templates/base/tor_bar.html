@@ -1,0 +1,23 @@
+<div class="top-bar" id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Menu bar</li>
+        <li class="has-submenu">
+          <a href="../listado">Lista</a>
+        </li>
+        <li><a href="../crear/">Crear</a></li>
+        <li>
+          <a>Filtro</a>
+          <ul class="menu vertical">
+            <li><a href="{% url 'url:filtro_marca' %}">Filtro por marca</a></li>
+            <li><a href="{% url 'url:filtro_modelo' %}">Filtro por modelo</a></li>
+            <li><a href="{% url 'url:filtro_fecha' %}">Filtro por fecha</a></li>
+            <li><a href="{% url 'url:filtro_telefono' %}">Filtro por telefono</a></li>
+            <li><a href="{% url 'url:filtro_matricula' %}">Filtro por matricula</a></li>
+            <li><a href="{% url 'url:filtro_id' %}">Filtro por id</a></li>
+          </ul>
+        <li><a href="{% url 'url:key' %}">Keys</a></li>
+        
+      </ul>
+    </div>
+</div>
